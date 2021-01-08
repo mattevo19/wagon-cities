@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import selectCity from '../actions/index';
 
 const City = (props) => {
   return (
@@ -7,7 +9,10 @@ const City = (props) => {
       {props.city.name}
     </li>
   );
+};
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectCity }, dispatch);
 }
 
-export default City;
-// export default connect(mapStateToProps,???)(City);
+export default connect(null, mapDispatchToProps)(City);

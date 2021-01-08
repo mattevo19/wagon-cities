@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import City from '../containers/city';
 
 class CityList extends Component {
@@ -13,6 +15,9 @@ class CityList extends Component {
     );
   }
 }
-// export default connect(mapStateToProps,)(CityList);
-
-export default CityList;
+function mapStateToProps(state) {
+  return {
+    cities: state.cities
+  };
+}
+export default connect(mapStateToProps)(CityList);
