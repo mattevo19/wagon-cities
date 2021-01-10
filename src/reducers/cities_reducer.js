@@ -1,8 +1,7 @@
-export default function(state = null, action) {
+export default function(state, action) {
   switch (action.type) {
-    case 'CITY_SELECTED': {
-      state;
-    }
+    case 'CITY_SELECTED':
+      return state;
     default: {
       return [
         { name: 'Paris', address: '16 Villa Gaudelet, 75011 Paris', slug: 'paris' },
